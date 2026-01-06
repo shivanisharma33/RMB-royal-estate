@@ -1,20 +1,27 @@
 import hero from "@/assets/contact.jpg";
 import horse from "@/assets/Horses.jpg";
 import logo from "@/assets/rmb.png";
+import Footer from "@/components/Footer";
 
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-black text-white font-light pt-28">
+    <div className="min-h-screen bg-black text-white font-light">
 
-      {/* ================= HERO ================= */}
-      <section className="relative h-[90vh] w-full overflow-hidden">
+      {/* ================= HERO (BEHIND NAVBAR) ================= */}
+      <section className="relative h-[100vh] w-full overflow-hidden">
+        
+        {/* Background Image */}
         <img
           src={hero}
           alt="Contact Hero"
           className="absolute inset-0 w-full h-full object-cover grayscale opacity-80"
         />
 
-        <div className="absolute inset-0 flex items-center justify-center">
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/30" />
+
+        {/* Center Logo */}
+        <div className="absolute inset-0 flex items-center justify-center z-10">
           <img
             src={logo}
             alt="RMB Real Estate"
@@ -26,31 +33,40 @@ export default function Contact() {
       {/* ================= INFO SECTION ================= */}
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-16 px-8 md:px-16 py-24">
 
+        {/* List With Us */}
         <div>
           <h4 className="text-xs tracking-widest mb-6 uppercase">
             LIST WITH US
           </h4>
           <p className="text-sm mb-4 max-w-xs">
-            If you prefer marketing bold and your property sold:
+            If you prefer bold marketing and exceptional results for your property:
           </p>
-          <a href="tel:0390174848" className="underline text-sm">
+          <a
+            href="tel:0390174848"
+            className="underline text-sm hover:text-white/70 transition"
+          >
             03 9017 4848
           </a>
         </div>
 
+        {/* Location */}
         <div>
           <h4 className="text-xs tracking-widest mb-6 uppercase">
             LOCATION
           </h4>
           <p className="text-sm mb-4">
-            110/95 Hazel Glen Drive, Doreen.
+            110/95 Hazel Glen Drive, Doreen
           </p>
-          <a href="tel:0390174848" className="underline text-sm">
+          <a
+            href="tel:0390174848"
+            className="underline text-sm hover:text-white/70 transition"
+          >
             03 9017 4848
           </a>
         </div>
 
-        <div className="w-full h-[220px] grayscale">
+        {/* Map */}
+        <div className="w-full h-[220px] grayscale overflow-hidden">
           <iframe
             title="Hazel Glen Drive Map"
             src="https://www.google.com/maps?q=Hazel%20Glen%20Drive%20Doreen&output=embed"
@@ -63,15 +79,17 @@ export default function Contact() {
       {/* ================= IMAGE + FORM ================= */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-24 px-8 md:px-16 py-24">
 
+        {/* Image */}
         <img
           src={horse}
           alt="Lifestyle"
-          className="w-full object-cover grayscale"
+          className="w-full h-full object-cover grayscale"
         />
 
+        {/* Form */}
         <div>
           <h2 className="text-2xl tracking-wide mb-10 uppercase">
-            MESSAGE US
+            Message Us
           </h2>
 
           <form className="space-y-6">
@@ -79,45 +97,28 @@ export default function Contact() {
               <input
                 key={item}
                 placeholder={item}
-                className="w-full bg-transparent border border-white/20 px-4 py-3 text-sm outline-none"
+                className="w-full bg-transparent border border-white/20 px-4 py-3 text-sm outline-none focus:border-white transition"
               />
             ))}
 
             <textarea
               placeholder="Enquiry"
               rows={4}
-              className="w-full bg-transparent border border-white/20 px-4 py-3 text-sm outline-none"
+              className="w-full bg-transparent border border-white/20 px-4 py-3 text-sm outline-none focus:border-white transition"
             />
 
-            <button className="border border-white px-10 py-3 text-xs tracking-widest uppercase hover:bg-white hover:text-black transition">
-              SEND ENQUIRY
+            <button
+              type="submit"
+              className="border border-white px-10 py-3 text-xs tracking-widest uppercase hover:bg-white hover:text-black transition"
+            >
+              Send Enquiry
             </button>
           </form>
         </div>
       </section>
 
       {/* ================= FOOTER ================= */}
-      <footer className="px-8 md:px-16 py-16 border-t border-white/10 text-xs flex flex-col lg:flex-row justify-between gap-10">
-
-        <div className="flex items-center gap-4">
-          <img src={logo} alt="RMB Logo" className="w-10" />
-          <span>© Copyright 2025 Marchetti Group.</span>
-        </div>
-
-        <div className="max-w-md">
-          <p className="mb-3">
-            We’re people first and professionals second – which means no
-            polyester suits, bad toupees or smooth-talking real estate nonsense.
-          </p>
-          <p>110/95 Hazel Glen Drive, Doreen.</p>
-        </div>
-
-        <div className="flex gap-6 text-sm">
-          <span>Instagram</span>
-          <span>Facebook</span>
-          <span>LinkedIn</span>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
