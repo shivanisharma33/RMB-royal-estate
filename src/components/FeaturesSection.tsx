@@ -1,6 +1,6 @@
 import FeatureCard from './FeatureCard';
 import locationImg from '@/assets/location.jpg';
-import horseImg from '@/assets/horses.jpg';
+import horseImg from '@/assets/Horses.jpg';
 import interiorImg from '@/assets/interior.jpg';
 
 const features = [
